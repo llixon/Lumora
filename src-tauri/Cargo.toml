@@ -1,0 +1,23 @@
+[package]
+name = "lumora"
+version = "1.0.0"
+description = "A native desktop shell for lumo.proton.me"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "image-png"] }
+tauri-plugin-window-state = "2"
+tauri-plugin-global-shortcut = "2"
+open = "5"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

@@ -1,0 +1,23 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Capability for the main window (remote Proton origin). Remote gets zero IPC except what is listed here. Window/webview chrome + event emit/listen for export. The titlebar close button hides to tray (allow-hide) rather than quitting; quit is tray-only.",
+  "windows": ["main"],
+  "remote": { "urls": ["https://lumo.proton.me", "https://account.proton.me"] },
+  "permissions": [
+    "core:window:allow-start-dragging",
+    "core:window:allow-start-resize-dragging",
+    "core:window:allow-minimize",
+    "core:window:allow-toggle-maximize",
+    "core:window:allow-is-maximized",
+    "core:window:allow-set-fullscreen",
+    "core:window:allow-is-fullscreen",
+    "core:window:allow-hide",
+    "core:window:allow-set-always-on-top",
+    "core:window:allow-is-always-on-top",
+    "core:webview:allow-clear-all-browsing-data",
+    "core:event:allow-emit",
+    "core:event:allow-listen",
+    "core:event:allow-unlisten"
+  ]
+}
